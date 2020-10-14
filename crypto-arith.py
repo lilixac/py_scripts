@@ -1,3 +1,10 @@
+'''
+How to get solution:
+>>> python3 crypto-arith.py
+>>> Enter the string to evaluate: send + more = money
+>>> Solution found: <solution>
+'''
+
 import itertools
 
 def solve(problem):
