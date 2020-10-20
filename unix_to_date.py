@@ -2,6 +2,11 @@ OFFSET19700101 = 2440588
 SECONDS_PER_DAY = 24 * 60 * 60
 
 def _daysToDate(_days: int):
+	'''
+	Returns year, month and day based on the `_days` parameter.
+	
+	:param _days: It is equal to the unix timestamp / seconds_per_day.
+	'''
 	L = int(_days + 68569 + OFFSET19700101)
 	N = int(4 * L // 146097)
 	L = int(L - (146097 * N + 3) // 4)
@@ -20,6 +25,9 @@ def _daysToDate(_days: int):
 	return year, month, day
 
 def timeStampToDate( timestamp: int):
+	'''
+	:param timestamp: The timestamp of which we need year, month and day. 
+	'''
 	(year, month, day) = _daysToDate(timestamp / SECONDS_PER_DAY)
 	return year, month, day
 
